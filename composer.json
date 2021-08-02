@@ -1,0 +1,137 @@
+{
+    "name": "mozgbrasil/heroku-magento",
+    "description": "Heroku Magento Mozg",
+    "version": "1.0.0",
+    "type": "project",
+    "keywords": [
+      "heroku",
+      "magento",
+      "mozg"
+    ],
+    "homepage": "http://mozg.com.br",
+    "time": "2019-02-25 19:59:31",
+    "license": [
+        "proprietary"
+    ],
+    "authors": [
+        {
+            "name": "Marcio dos Santos Amorim",
+            "email": "suporte@mozg.com.br",
+            "homepage": "http://mozg.com.br",
+            "role": "Developer"
+        }
+    ],
+    "support": {
+        "email": "suporte@mozg.com.br",
+        "issues": "https://github.com/mozgbrasil/heroku-magento/issues",
+        "forum": "http://mozg.com.br/forums/view/1",
+        "wiki": "http://wiki.mozg.com.br",
+        "irc": "irc://irc.freenode.org/mozgbrasil",
+        "source": "https://github.com/mozgbrasil/heroku-magento",
+        "docs": "https://github.com/mozgbrasil/heroku-magento/wiki",
+        "rss": "http://mozg.com.br/sitemap.xml"
+    },
+    "minimum-stability": "dev",
+    "prefer-stable": true,
+    "repositories":[
+        {
+            "type":"composer",
+            "url":"https://packages.firegento.com"
+        },
+        {
+            "type": "package",
+            "package": {
+                "name": "haifeng-ben-zhang/magento1.9.2.4-sample-data",
+                "version": "1.0.0",
+                "source":{
+                    "url":"https://github.com/haifeng-ben-zhang/magento1.9.2.4-sample-data.git",
+                    "type":"git",
+                    "reference":"master"
+                }
+            }
+        },
+        {
+            "type": "package",
+            "package": {
+                "name": "prasathmani/tinyfilemanager",
+                "version": "1.0.0",
+                "source":{
+                    "url":"https://github.com/prasathmani/tinyfilemanager.git",
+                    "type":"git",
+                    "reference":"master"
+                }
+            }
+        },
+        {
+            "type": "package",
+            "package": {
+                "name": "ceckoslab/ceckoslab_quicklogin",
+                "version": "1.0.0",
+                "source":{
+                    "url":"https://github.com/ceckoslab/CeckosLab_QuickLogin.git",
+                    "type":"git",
+                    "reference":"master"
+                }
+            }
+        }
+    ],
+    "config": {
+        "preferred-install": "dist",
+        "process-timeout": 0
+    },
+    "require": {
+        "php": ">=5.5.0 <7.3.0",
+        "magento-hackathon/magento-composer-installer": "~3.0",
+        "aydin-hassan/magento-core-composer-installer": "~1.2",
+        "firegento/magento": "~1.9.4.0",
+        "haifeng-ben-zhang/magento1.9.2.4-sample-data": "1.0.*",
+        "prasathmani/tinyfilemanager": "1.0.*",
+        "ceckoslab/ceckoslab_quicklogin": "1.0.*",
+        "aoepeople/aoe_scheduler": "^1.5",
+        "aschroder/smtp_pro": "^2.0",
+        "mozgbrasil/magento-bundle-php_56": "dev-master",
+        "symfony/process": "^3.4"
+    },
+    "extra":{
+        "magento-root-dir":"magento",
+        "magento-deploystrategy": "copy",
+        "magento-force": true
+    },
+    "scripts": {
+        "pre-update-cmd": [
+          "echo '#@@# pre-update-cmd';pwd;ls;"
+        ],
+        "post-update-cmd": [
+          "echo '#@@# post-update-cmd';pwd;ls;",
+          "php -r \"system('bash app.sh post_update_cmd');\""
+        ],
+        "pre-install-cmd": [
+          "echo '#@@# pre-install-cmd';pwd;ls;"
+        ],
+        "post-install-cmd": [
+          "echo '#@@# post-install-cmd';pwd;ls;",
+          "php -r \"system('bash app.sh post_install_cmd');\""
+        ],
+        "post-status-cmd": [
+          "echo '#@@# post-status-cmd';pwd;ls;"
+        ],
+        "pre-archive-cmd": [
+          "echo '#@@# pre-archive-cmd';pwd;ls;"
+        ],
+        "post-archive-cmd": [
+          "echo '#@@# post-archive-cmd';pwd;ls;"
+        ],
+        "pre-autoload-dump": [
+          "echo '#@@# pre-autoload-dump';pwd;ls;"
+        ],
+        "post-autoload-dump": [
+          "echo '#@@# post-autoload-dump';pwd;ls;"
+        ],
+        "post-root-package-install": [
+          "echo '#@@# post-root-package-install';pwd;ls;"
+        ],
+        "post-create-project-cmd": [
+          "echo '#@@# post-create-project-cmd';pwd;ls;"
+        ]
+    }
+}
