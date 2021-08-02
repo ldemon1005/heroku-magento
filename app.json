@@ -1,5 +1,5 @@
 {
-    "name":"mozgbrasil/heroku-magento",
+    "name":"ldemon1005/heroku-magento",
     "description":"Heroku Magento App",
     "keywords":[
         "app.json",
@@ -9,7 +9,7 @@
         "brasil"
     ],
     "website":"http://mozg.com.br/",
-    "repository":"https://github.com/mozgbrasil/heroku-magento",
+    "repository":"https://github.com/ldemon1005/heroku-magento",
     "logo":"http://mozg.com.br/assets/images/logos/logo.svg",
     "success_url":"/",
     "scripts":{
